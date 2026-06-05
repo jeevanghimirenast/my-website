@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Jeevan Ghimire | Materials Scientist & Nanotechnology Researcher</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafc;
+            color: #1f2a44;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* header & navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(2px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.02);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #e9eef3;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo a {
+            font-weight: 800;
+            font-size: 1.6rem;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #1e3c72, #2b4c7c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #2c3e66;
+            transition: 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: #2c7da0;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.6rem;
+            cursor: pointer;
+            color: #1f2a44;
+        }
+
+        @media (max-width: 800px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: white;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                padding: 1.5rem;
+                box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05);
+                border-bottom: 1px solid #eef2f6;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .mobile-menu {
+                display: block;
+            }
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        /* sections */
+        section {
+            padding: 5rem 0;
+            border-bottom: 1px solid #eef2f8;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+            background: linear-gradient(120deg, #1f2a44, #2b4c6e);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .hero {
+            padding: 4rem 0 2rem 0;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .hero-text h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(145deg, #0a2b3e, #1b4f72);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-tag {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #2c5282;
+            margin-bottom: 1rem;
+        }
+
+        .hero-badge {
+            background: #eef2ff;
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 1rem 0;
+            color: #1e4a76;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .btn-primary {
+            background: #1e3c72;
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #0e2a4f;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #1e3c72;
+            color: #1e3c72;
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-outline:hover {
+            background: #1e3c72;
+            color: white;
+        }
+
+        /* cards grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.8rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.02);
+            transition: all 0.2s ease;
+            border: 1px solid #edf2f7;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.08);
+            border-color: #dce5f0;
+        }
+
+        .exp-item, .edu-item {
+            margin-bottom: 1.8rem;
+        }
+        .exp-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        .exp-meta {
+            font-size: 0.85rem;
+            color: #4a627a;
+            margin: 0.4rem 0;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .publication-list li, .ref-list li {
+            margin-bottom: 1rem;
+            list-style: none;
+        }
+        .pub-authors {
+            font-weight: 500;
+            color: #1f2a44;
+        }
+        .pub-journal {
+            font-style: italic;
+            color: #2c5282;
+            font-size: 0.9rem;
+        }
+        hr {
+            margin: 1rem 0;
+            border-color: #eef2f8;
+        }
+        .skill-tag {
+            background: #eef2ff;
+            padding: 0.3rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-block;
+            margin: 0.2rem 0.3rem;
+        }
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            background: #f1f5f9;
+            color: #2d3e6e;
+            font-size: 0.85rem;
+        }
+        .icon-text {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0.3rem 0;
+        }
+        .ref-card {
+            background: #fafcff;
+        }
+        @media (max-width: 640px) {
+            .hero-text h1 { font-size: 2.3rem; }
+            .section-title { font-size: 1.7rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><a href="#">Jeevan Ghimire</a></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#references">References</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" id="mobileMenu"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Jeevan Ghimire</h1>
+                        <div class="hero-tag">M.Sc. Materials Science & Engineering | Graduate Research Assistant</div>
+                        <div class="hero-badge"><i class="fas fa-trophy"></i> First Rank — M.Sc. Materials Science & Engineering (2018–2020)</div>
+                        <p style="max-width: 550px; margin: 1rem 0 0.5rem 0;">Nanomaterials synthesis · Waste-derived functional carbons · Physicochemical characterization · Sustainable materials for energy & environment</p>
+                        <div class="btn-group">
+                            <a href="#contact" class="btn-primary"><i class="fas fa-paper-plane"></i> Get in touch</a>
+                            <a href="#" class="btn-outline" id="downloadCvBtn"><i class="fas fa-file-pdf"></i> Download CV (PDF)</a>
+                        </div>
+                        <div class="icon-text"><i class="fas fa-map-marker-alt"></i> Khumaltar, Lalitpur, Nepal</div>
+                    </div>
+                    <div style="background: #eef3fc; border-radius: 2rem; padding: 1rem 1.5rem; text-align: center;">
+                        <i class="fas fa-flask" style="font-size: 3rem; color: #1e3c72;"></i>
+                        <p style="margin-top: 0.5rem; font-weight: 500;">Materials Science &<br>Nanotechnology Lab</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <div class="container">
+                <h2 class="section-title"><i class="fas fa-briefcase"></i> Professional Experience</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="exp-item">
+                            <div class="exp-title">Graduate Research Assistant</div>
+                            <div class="exp-meta"><i class="far fa-calendar-alt"></i> 2024 – Present | Materials Science & Nanotechnology Lab, Khumaltar</div>
+                            <p>Conduct materials synthesis and physicochemical characterization. Support national research projects focused on sustainable materials and waste-derived functional carbons. Assist instrumentation-based training and laboratory coordination.</p>
+                        </div>
+                        <div class="exp-item">
+                            <div class="exp-title">Lecturer (Part-Time)</div>
+                            <div class="exp-meta"><i class="far fa-calendar-alt"></i> 2023 – 2024 | Institute of Engineering, Tribhuvan University, Pulchowk</div>
+                            <p>Delivered undergraduate lectures and laboratory sessions in materials-related courses, curriculum development and student mentoring.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="exp-item">
+                            <div class="exp-title">TWAS Research Project Researcher</div>
+                            <div class="exp-meta"><i class="far fa-calendar-alt"></i> Dec 2018 – Jun 2020 | IOE Pulchowk Campus</div>
+                            <p><strong>Grant 18-168RG/CHE/AS_G-FR3240030651</strong><br>Physicochemical properties of hydrothermally grown ceramic nanoparticles on activated carbon derived from waste materials. Supervised by Prof. Dr. Hem Raj Pant.</p>
+                        </div>
+                        <div class="skill-tag"><i class="fas fa-microscope"></i> Hydrothermal synthesis</div>
+                        <div class="skill-tag"><i class="fas fa-chalkboard"></i> Activated Carbon</div>
+                        <div class="skill-tag">XRD/SEM/FTIR</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Highlights & Projects -->
+        <section id="research">
+            <div class="container">
+                <h2 class="section-title"><i class="fas fa-microscope"></i> Research & Project Highlights</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <i class="fas fa-leaf" style="font-size: 2rem; color: #2b6e4f;"></i>
+                        <h3 style="margin: 1rem 0 0.5rem;">Waste-derived Functional Carbons</h3>
+                        <p>Development of activated carbon from agricultural waste (Bayer seeds, pistachio shells) for water treatment and energy storage. Decoration with ZnO nanorods for enhanced methylene blue removal.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-charging-station" style="font-size: 2rem; color: #2b6e4f;"></i>
+                        <h3 style="margin: 1rem 0 0.5rem;">Energy Storage & Supercapacitors</h3>
+                        <p>Synthesis and characterization of activated carbon from Ziziphus mauritiana seeds for supercapacitor electrodes. IOE Graduate Conference 2021.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-cube" style="font-size: 2rem; color: #2b6e4f;"></i>
+                        <h3 style="margin: 1rem 0 0.5rem;">ZnCl₂ Activation & ZnO Rich Materials</h3>
+                        <p>Investigating impregnation ratio driven transition from activated carbon to ZnO-rich products during chemical activation of pistachio shell (under review in Biomass Conv. Biorefinery).</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-laptop-code" style="font-size: 2rem; color: #2b6e4f;"></i>
+                        <h3 style="margin: 1rem 0 0.5rem;">DFT & Machine Learning in Chemistry</h3>
+                        <p>Collaborative DFT-assisted spectroscopic characterization and ML-driven reactivity analysis of brominated sulfonamide and 4-aminobenzoate (manuscripts in peer review).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications">
+            <div class="container">
+                <h2 class="section-title"><i class="fas fa-book-open"></i> Publications & Manuscripts</h2>
+                <div class="card" style="margin-bottom: 2rem;">
+                    <h3 style="margin-bottom: 1rem;"><i class="fas fa-check-circle" style="color:#2c7da0;"></i> Peer-Reviewed Journals & Conferences</h3>
+                    <ul class="publication-list">
+                        <li><span class="pub-authors">Shrestha, P.; Jha, M. K.; Ghimire, J.; et al.</span> (2020). Decoration of Zinc Oxide Nanorods into the Surface of Activated Carbon Obtained from Agricultural Waste for Effective Removal of Methylene Blue Dye. <span class="pub-journal">Materials, 13(24), 5667.</span> <a href="https://doi.org/10.3390/ma13245667" target="_blank" style="font-size:0.8rem;">DOI</a></li>
+                        <li><span class="pub-authors">Ghimire, J.; Jha, M. K.; Shah, D.; Pant, H. R.; Joshi, S.</span> (2021). Synthesis and Characterization of Activated carbon from Bayer (Ziziphus Mauritiana) Seeds for Energy Storage Application. <span class="pub-journal">IOE Graduate Conference 9, 231-236.</span></li>
+                        <li><span class="pub-authors">Shih, D.; Ghimire, J.; Karki, B.K.</span> Eco-friendly Fabrication of Polycaprolactone (PCL) Thin Films Using Herbal Oils: Structure Development and Performance Assessment. <span class="pub-journal">Journal of the Indian Chemical Society (Elsevier) — Accepted/In Press.</span></li>
+                    </ul>
+                    <h3 style="margin: 1.5rem 0 1rem;"><i class="fas fa-hourglass-half"></i> Under Review / In Peer Review</h3>
+                    <ul class="publication-list">
+                        <li><span class="pub-authors">Neupane, B.; Basnet, K.; Ghimire, J.; Dhungel, S. K.</span> Intertwined Electronic, Optical, and Machine-Learning-Driven Reactivity in a Brominated Sulfonamide. <span class="pub-journal">Journal of Cheminformatics (Springer).</span></li>
+                        <li><span class="pub-authors">Neupane, B.; Ghimire, J.; et al.</span> DFT-Assisted Spectroscopic Characterization and Reactivity Analysis of 4-Aminobenzoate. <span class="pub-journal">Discover Applied Sciences (Springer).</span></li>
+                        <li><span class="pub-authors">Ghimire, J.; Neupane, B.; Budha, C.; Shah, D.</span> Impregnation Ratio Driven Transition from Activated Carbon to ZnO Rich Products During ZnCl₂ Activation of Pistachio Shell. <span class="pub-journal">Biomass Conversion and Biorefinery (Springer).</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Training -->
+        <section id="education">
+            <div class="container">
+                <div class="grid-2">
+                    <div>
+                        <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+                        <div class="card">
+                            <div class="exp-title">M.Sc. Materials Science & Engineering</div>
+                            <div class="exp-meta">Tribhuvan University, Pulchowk Campus | 2018 – 2020</div>
+                            <p><strong>First position</strong> among all Master's students (academic year 2018–2020). Thesis on activated carbon composites.</p>
+                        </div>
+                        <div class="card" style="margin-top: 1rem;">
+                            <div class="exp-title">B.E. Electronics & Communication Engineering</div>
+                            <div class="exp-meta">Tribhuvan University, Thapathali Campus | 2011 – 2015</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="section-title"><i class="fas fa-chalkboard-user"></i> Training & Certifications</h2>
+                        <div class="card">
+                            <ul style="list-style: none;">
+                                <li><i class="fas fa-satellite-dish"></i> <strong>UTokyo / ICG Training</strong> — Global Navigation Satellite Systems (GNSS) (Jan-Feb 2025)</li>
+                                <li style="margin-top: 1rem;"><i class="fas fa-chart-line"></i> <strong>Nepal Administrative Staff College</strong> — Financial and Administrative Excellence (Oct 2024)</li>
+                            </ul>
+                        </div>
+                        <h2 class="section-title" style="margin-top: 1.5rem;"><i class="fas fa-globe"></i> Conferences & Webinars</h2>
+                        <div class="card">
+                            <p><i class="far fa-calendar-check"></i> International Conference on Science & Technology Information Management Systems, NAM S&T Centre & NAST (May 2025).</p>
+                            <p style="margin-top: 0.8rem;"><i class="fas fa-chalkboard"></i> C&EN Webinar — Evaluating Drug-Drug Interactions: A Framework from Lab to Clinic (Virtual, Nov 12, 2025).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section id="references">
+            <div class="container">
+                <h2 class="section-title"><i class="fas fa-address-card"></i> Scientific References</h2>
+                <div class="grid-2">
+                    <div class="card ref-card">
+                        <i class="fas fa-user-circle" style="font-size: 2rem; color: #1e3c72;"></i>
+                        <h3>Prof. Dr. Hem Raj Pant</h3>
+                        <p>Institute of Engineering, Tribhuvan University<br>Applied Science & Chemical Engineering</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:hempant@ioe.edu.np">hempant@ioe.edu.np</a></p>
+                    </div>
+                    <div class="card ref-card">
+                        <i class="fas fa-user-circle" style="font-size: 2rem; color: #1e3c72;"></i>
+                        <h3>Dr. Suresh Kumar Dhungel</h3>
+                        <p>Former Chief Technical Officer, Faculty of Technology, NAST</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:skdhungel@hotmail.com">skdhungel@hotmail.com</a></p>
+                    </div>
+                    <div class="card ref-card">
+                        <i class="fas fa-user-circle" style="font-size: 2rem; color: #1e3c72;"></i>
+                        <h3>Dr. Shalika Ram Bhandari</h3>
+                        <p>Senior Technical Officer, NAST (ISRF Alumnus)</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:shalikaa12@gmail.com">shalikaa12@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <div class="card" style="text-align: center; background: linear-gradient(120deg, #f0f6fe, white);">
+                    <h2 class="section-title" style="background: none; color:#1e3c72;"><i class="fas fa-paper-plane"></i> Let's Connect</h2>
+                    <p style="max-width: 500px; margin: 0 auto 1rem auto;">For collaboration, research inquiries, or academic discussions, reach out via email or connect on professional platforms.</p>
+                    <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin: 1.5rem 0;">
+                        <a href="mailto:jeevan.ghimire@researchlab.com" style="text-decoration: none; background: #1e3c72; color: white; padding: 0.7rem 1.5rem; border-radius: 40px;"><i class="fas fa-envelope"></i> jeevan.ghimire@researchlab.com</a>
+                        <a href="#" style="text-decoration: none; border: 1px solid #1e3c72; padding: 0.7rem 1.5rem; border-radius: 40px; color:#1e3c72;"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="#" style="text-decoration: none; border: 1px solid #1e3c72; padding: 0.7rem 1.5rem; border-radius: 40px; color:#1e3c72;"><i class="fab fa-google-scholar"></i> Google Scholar</a>
+                    </div>
+                    <p class="icon-text" style="justify-content: center;"><i class="fas fa-map-pin"></i> Khumaltar, Lalitpur, Nepal</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Jeevan Ghimire — Materials Science & Nanotechnology Researcher. Built with <i class="fas fa-heart" style="color:#b22234;"></i> for sustainable innovation.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.75rem;">Last updated: 2026 | All publications and research credited accordingly.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+        if(mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if(href === "#" || href === "") return;
+                const target = document.querySelector(href);
+                if(target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    if(navLinks.classList.contains('active')) navLinks.classList.remove('active');
+                }
+            });
+        });
+
+        // Download CV dummy (generates alert & placeholder - but authentic message)
+        const downloadBtn = document.getElementById('downloadCvBtn');
+        if(downloadBtn) {
+            downloadBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert("📄 Full CV download: Jeevan Ghimire's complete CV (PDF) is available upon request or you can directly contact via email. Thank you for your interest.");
+            });
+        }
+
+        // Additional small interaction: show year
+        const footerYear = document.querySelector('.footer p:first-child');
+        if(footerYear) {
+            const currentYear = new Date().getFullYear();
+            if(footerYear.innerText.includes('2026')) {
+                footerYear.innerText = footerYear.innerText.replace('2026', currentYear);
+            }
+        }
+    </script>
+</body>
+</html>
